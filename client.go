@@ -32,7 +32,7 @@ func NewClient(opts ...ClientOption) *Client {
 	c := &Client{
 		client:    nil,
 		hostURL:   "",
-		userAgent: "Kowl",
+		userAgent: "CloudHut-Connect-Client",
 		timeout:   60 * time.Second,
 		tlsCfg:    &tls.Config{},
 	}
