@@ -16,7 +16,7 @@ func (c *Client) PutConnectorConfig(ctx context.Context, connectorName string, o
 		SetError(ApiError{}).
 		SetPathParam("connector", connectorName).
 		SetBody(options.Config).
-		Get("/connectors/{connector}/config")
+		Put("/connectors/{connector}/config")
 	if err != nil {
 		return ConnectorInfo{}, err
 	}
