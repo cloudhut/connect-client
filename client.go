@@ -47,7 +47,7 @@ func NewClient(opts ...ClientOption) *Client {
 		SetHeader("Content-Type", "application/json").
 		SetTimeout(c.timeout).
 		SetError(&ApiError{}).
-		// SetBasicAuth(c.username, c.password).
+		SetBasicAuth(c.username, c.password).
 		SetAuthToken(c.authToken).
 		SetTLSClientConfig(c.tlsCfg)
 
