@@ -49,6 +49,7 @@ func NewClient(opts ...ClientOption) *Client {
 		SetError(&ApiError{}).
 		SetBasicAuth(c.username, c.password).
 		SetAuthToken(c.authToken).
+		SetDisableWarn(true).
 		SetTLSClientConfig(c.tlsCfg)
 
 	return c
