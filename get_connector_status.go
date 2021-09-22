@@ -20,6 +20,7 @@ type TaskState struct {
 	ID       int    `json:"id"`
 	State    string `json:"state"`
 	WorkerID string `json:"worker_id"`
+	Trace    string `json:"trace"`
 }
 
 func (c *Client) GetConnectorStatus(ctx context.Context, connectorName string) (ConnectorStateInfo, error) {
