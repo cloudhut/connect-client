@@ -67,6 +67,7 @@ type ListConnectorsResponseExpandedStatus struct {
 		ID       int    `json:"id"`
 		State    string `json:"state"`
 		WorkerID string `json:"worker_id"`
+		Trace    string `json:"trace,omitempty"`
 	} `json:"tasks"`
 	Type string `json:"type"`
 }
