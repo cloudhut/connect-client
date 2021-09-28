@@ -9,8 +9,8 @@ type ValidateConnectorConfigOptions struct {
 }
 
 type ConnectorValidationResultConfig struct {
-	Definition map[string]string `json:"definition"`
-	Value      map[string]string `json:"value"`
+	Definition map[string]interface{} `json:"definition"`
+	Value      map[string]interface{} `json:"value"`
 }
 
 type ConnectorValidationResult struct {
