@@ -5,7 +5,7 @@ import (
 )
 
 type ValidateConnectorConfigOptions struct {
-	Config map[string]string
+	Config map[string]interface{}
 }
 
 type ConnectorValidationResultConfig struct {
