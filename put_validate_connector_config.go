@@ -20,11 +20,11 @@ type ConnectorValidationResult struct {
 	Configs    []ConnectorValidationResultConfig `json:"configs"`
 }
 
-func (c *Client) ValidateConnectorConfig(ctx context.Context, pluginClassName string, options ValidateConnectorConfigOptions) (ConnectorValidationResult, error) {
-	var validationResultConfig ConnectorValidationResult
+func (c *Client) PutValidateConnectorConfig(ctx context.Context, pluginClassName string, options ValidateConnectorConfigOptions) (ConnectorValidationResult, error) {
+	var connectorValidationResult ConnectorValidationResult
 	response, err := c.client.NewRequest().
 		SetContext(ctx).
-		SetResult(&validationResultConfig).
+		SetResult(&connectorValidationResult).
 		SetError(ApiError{}).
 		SetPathParam("pluginClassName", pluginClassName).
 		SetBody(options.Config).
@@ -38,5 +38,5 @@ func (c *Client) ValidateConnectorConfig(ctx context.Context, pluginClassName st
 		return ConnectorValidationResult{}, err
 	}
 
-	return validationResultConfig, nil
+	return connectorValidationResult, nil
 }
