@@ -6,8 +6,8 @@ import (
 )
 
 type CreateConnectorRequest struct {
-	Name   string            `json:"name"`
-	Config map[string]string `json:"config"`
+	Name   string                 `json:"name"`
+	Config map[string]interface{} `json:"config"`
 }
 
 func (c *CreateConnectorRequest) Validate() error {
