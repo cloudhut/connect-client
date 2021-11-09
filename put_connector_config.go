@@ -5,7 +5,7 @@ import (
 )
 
 type PutConnectorConfigOptions struct {
-	Config map[string]string
+	Config map[string]interface{}
 }
 
 func (c *Client) PutConnectorConfig(ctx context.Context, connectorName string, options PutConnectorConfigOptions) (ConnectorInfo, error) {
