@@ -62,8 +62,8 @@ type ListConnectorsResponseExpandedStatus struct {
 	Connector struct {
 		State    string `json:"state"`
 		WorkerID string `json:"worker_id"`
+		Trace    string `json:"trace,omitempty"`
 	}
-	Trace string `json:"trace,omitempty"`
 	Tasks []struct {
 		ID       int    `json:"id"`
 		State    string `json:"state"`
