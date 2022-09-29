@@ -14,6 +14,7 @@ type ConnectorStateInfo struct {
 type ConnectorState struct {
 	State    string `json:"state"`
 	WorkerID string `json:"worker_id"`
+	Trace    string `json:"trace,omitempty"`
 }
 
 type TaskState struct {
