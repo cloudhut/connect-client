@@ -5,12 +5,17 @@ import (
 	"strconv"
 )
 
-// ListConnectorsOptions describe the available options to list connectors. Either Status or Info must be set to true.
+// RestartConnectorOptions describe the available options to restart connectors.
 type RestartConnectorOptions struct {
+	// Specifies whether to restart the connector instance and task instances
+	// or just the connector instance. Default is false.
 	IncludeTasks bool
-	OnlyFailed   bool
+	// Specifies whether to restart just the instances with a FAILED status
+	// or all instances. Default is false.
+	OnlyFailed bool
 }
 
+// // RestartConnector restart the connector.
 func (c *Client) RestartConnector(ctx context.Context, connectorName string, options RestartConnectorOptions) error {
 	response, err := c.client.NewRequest().
 		SetContext(ctx).
