@@ -41,11 +41,12 @@ func (l *ListConnectorsOptions) Validate() error {
 
 // ListConnectorsResponseExpanded is the response to /connectors if the expand query parameters are set.
 type ListConnectorsResponseExpanded struct {
-	Info   ListConnectorsResponseExpandedInfo   `json:"info"`
-	Status ListConnectorsResponseExpandedStatus `json:"status"`
+	Info   ConnectorInfo      `json:"info"`
+	Status ConnectorStateInfo `json:"status"`
 }
 
 // ListConnectorsResponseExpandedInfo represents the Info object for described connectors.
+// Deprecated: Use ConnectorInfo instead, the same information is available there
 type ListConnectorsResponseExpandedInfo struct {
 	Name   string            `json:"name"`
 	Config map[string]string `json:"config"`
@@ -57,6 +58,7 @@ type ListConnectorsResponseExpandedInfo struct {
 }
 
 // ListConnectorsResponseExpandedStatus represents the Status object for described connectors.
+// Deprecated: Use ConnectorStateInfo instead, the same information is available there
 type ListConnectorsResponseExpandedStatus struct {
 	Name      string `json:"name"`
 	Connector struct {
