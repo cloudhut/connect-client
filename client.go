@@ -3,6 +3,7 @@ package connect
 import (
 	"crypto/tls"
 	"github.com/go-resty/resty/v2"
+	"net/http"
 	"time"
 )
 
@@ -41,7 +42,7 @@ func NewClient(opts ...ClientOption) *Client {
 	}
 
 	c.client = resty.New().
-		SetHostURL(c.hostURL).
+		SetBaseURL(c.hostURL).
 		SetHeader("User-Agent", c.userAgent).
 		SetHeader("Accept", "application/json").
 		SetHeader("Content-Type", "application/json").
@@ -53,4 +54,8 @@ func NewClient(opts ...ClientOption) *Client {
 		SetTLSClientConfig(c.tlsCfg)
 
 	return c
+}
+
+func (c *Client) GetClient() *http.Client {
+	return c.client.GetClient()
 }
